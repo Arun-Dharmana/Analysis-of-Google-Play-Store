@@ -43,7 +43,7 @@ gps['Price'] = gps['Price'].astype('float')
 
 print(gps.dtypes)
 
-# 4. Print the total number of apps, top5 Genres by number of apps 
+# 3. Print the total number of apps, top5 Genres by number of apps 
 # and the percentage of total. Average ratings by Genre
 
 print(gps.Genres.value_counts().sum())
@@ -51,7 +51,7 @@ print(gps.Genres.value_counts().head(5))
 print(gps.Genres.value_counts(normalize=True).head(5))
 print(gps.groupby('Genres').mean())
 
-# 5. Repeat the above analysis by category. Plot a bar chart by category and
+# 4. Repeat the above analysis by category. Plot a bar chart by category and
 # number of apps
 
 print(gps.Category.value_counts().head(5))
@@ -64,11 +64,11 @@ b=num_apps.values
 
 num_apps.plot(x=a,y=b,kind='bar',title='Num Apps by Category')
 
-# 6. What is the percentage of paid apps and the average price of the paid apps by category
+# 5. What is the percentage of paid apps and the average price of the paid apps by category
 
 print(pd.pivot_table(gps,index='Category',columns='Type',aggfunc='size',fill_value=0))
 
-# 7. Does size of the app effect the ratings, do paid apps have higher ratings? What is the
+# 6. Does size of the app effect the ratings, do paid apps have higher ratings? What is the
 # distribution of these variables. Make Joint Plots to answer these questions
 
 # check for null values and number of apps in each category
@@ -86,7 +86,7 @@ plt1 = sns.jointplot(x=large_apps['Size'],y=large_apps['Rating'])
 
 plt2 = sns.jointplot(x=large_apps['Price'],y=large_apps['Rating'])
 
-# 8. Does pricing of an app related to category, do some categories of apps have
+# 7. Does pricing of an app related to category, do some categories of apps have
 # more expensive apps. Make a strip plot to answer this question. 
 # List the top 20 most expensive apps
 
